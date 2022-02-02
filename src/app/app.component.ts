@@ -1,3 +1,4 @@
+import { ChargingStationsService } from './services/charging-stations.service';
 import { Component, OnInit} from '@angular/core';
 
 
@@ -7,8 +8,19 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  constructor() {}
 
-  ngOnInit(){}
+  stations!: any;
+
+  constructor(private cs: ChargingStationsService) {}
+
+  ngOnInit(){
+    this.cs.getAll().subscribe(response => {
+      this.stations = response
+      // for(let s of this.stations){
+        console.log(this.stations.data.scoordinate.x);
+        console.log(this.stations.data.scoordinate.y);
+      // }
+    });
+  }
 }
 
