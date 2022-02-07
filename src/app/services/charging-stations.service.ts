@@ -12,7 +12,7 @@ export class ChargingStationsService {
   constructor(private http: HttpClient) { }
 
   getAllStations(): Observable<openDataHubAnswerJSON> {
-    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=200&distinct=true`);
+    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&distinct=true`);
   }
 
 }
