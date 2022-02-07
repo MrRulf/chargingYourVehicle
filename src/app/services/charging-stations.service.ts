@@ -1,27 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ChargingStations } from '../shared/charging-stations';
-import { map } from 'rxjs/operators';
+import { openDataHubAnswerJSON } from '../shared/openDataHub-answer-json';
 
+const URL: string = "https://mobility.api.opendatahub.bz.it/v2/flat%2Cnode/EChargingStation";
 @Injectable({
   providedIn: 'root'
 })
 export class ChargingStationsService {
 
-  url: string = "https://mobility.api.opendatahub.bz.it/v2/flat%2Cnode/EChargingStation?limit=200&distinct=true";
-  private chargingS!: ChargingStations[];
-
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<ChargingStations> {
-    return this.http.get<any>(this.url)
-        // Webservice liefert ein Json-Objekt mit dem Namen rows zurück in dem das Array
-        // gespeichert ist
-        .pipe(
-          map(response => response.rows),
-          map(stations => this.chargingS = stations)
-        );
+  getAllStations(): Observable<openDataHubAnswerJSON> {
+    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=200&distinct=true`);
   }
 
 }

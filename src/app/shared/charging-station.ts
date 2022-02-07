@@ -1,7 +1,7 @@
 import { Metadata } from './metadata';
 import { Coordinates } from './coordinates';
 
-export class ChargingStations {
+export class ChargingStation {
 
   public sactive!: boolean;
   public savailable!: boolean;

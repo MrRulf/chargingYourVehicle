@@ -1,7 +1,6 @@
 import { ChargingStationsService } from './services/charging-stations.service';
 import { Component, OnInit} from '@angular/core';
-import { ChargingStations } from './shared/charging-stations';
-
+import { ChargingStation } from './shared/charging-station';
 @Component({
   selector: 'cyv-root',
   templateUrl: './app.component.html',
@@ -9,16 +8,18 @@ import { ChargingStations } from './shared/charging-stations';
 })
 export class AppComponent implements OnInit{
 
-  stations!: ChargingStations;
+  public stations!: ChargingStation[];
 
   constructor(private cs: ChargingStationsService) {}
 
   ngOnInit(){
-    this.cs.getAll().subscribe(response => {
-      this.stations = response;
-
-        console.log(this.stations.scoordinate.x);
-
+    this.cs.getAllStations().subscribe(answer => {
+      this.stations = answer.data;
+      console.log(stations);
+      console.log(this.stations.length);
+      for (let i = 0; i < this.stations.length; i++) {
+        console.log(this.stations[i].scode);
+      }
     });
   }
 }
