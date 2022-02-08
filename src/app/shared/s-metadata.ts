@@ -1,4 +1,4 @@
-export class Metadata {
+export class sMetadata {
 
   public city!: string;
   public state!: string;
