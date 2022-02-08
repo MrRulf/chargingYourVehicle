@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { MarkerService } from './services/marker.service';
+import { PopupService } from './services/popup.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ import { MapComponent } from './map/map.component';
     HttpClientModule
   ],
   providers: [
-    MarkerService
+    MarkerService,
+    PopupService
   ],
   bootstrap: [AppComponent],
 })
