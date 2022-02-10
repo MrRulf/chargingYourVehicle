@@ -18,13 +18,13 @@ export class MarkerService {
 
   //Diese Methode setzt anhand des WebServices die marker
   makeCapitalMarkers(map: L.Map): void {
-    this.cs.getAllStationsInCoordinatesFull(Areas.southtyrol).subscribe((answer) => {
+    this.cs.getAllStationsInCoordinatesLite(Areas.southtyrol).subscribe((answer) => {
       for (let i = 0; i < answer.data.length; i++) {
         let marker = L.marker([
           answer.data[i].scoordinate.y,
           answer.data[i].scoordinate.x,
         ]);
-        this.cp.getAllStationPlugsFull(answer.data[i].scode).subscribe( plugs => {
+        this.cp.getAllStationPlugsLite(answer.data[i].scode).subscribe( plugs => {
           let pop: popUpData[] = [];
           for (let j = 0; j < plugs.data.length; j++){
             pop.push({
