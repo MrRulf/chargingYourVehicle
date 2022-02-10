@@ -1,5 +1,5 @@
 import { Outlet } from "./outlet";
 
-export class pMetadata {
+export class pMetadataCar {
     private outlets!: Outlet[];
 }

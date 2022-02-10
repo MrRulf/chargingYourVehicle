@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { openDataHubAnswerJSON } from '../shared/openDataHub-answer-json';
 
-const URL: string = "https://mobility.api.opendatahub.bz.it/v2/flat%2Cnode/EChargingPlug";
+const URL: string = "https://mobility.api.opendatahub.bz.it/v2/flat%2Cnode/BIKE_CHARGER_BAY";
 @Injectable({
   providedIn: 'root'
 })

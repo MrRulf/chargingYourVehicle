@@ -1,13 +1,13 @@
-import { ChargingStation } from "./charging-station";
+import { BikeStation } from "./bike-station";
 import { Coordinates } from "./coordinates";
-import { pMetadataCar } from "./p-metadata-car";
+import { pMetadataBike } from "./p-metadata-bike";
 
-export class ChargingPlug extends ChargingStation {
+export class BikePlug extends BikeStation {
     public pactive!: boolean;
     public pavailable!: boolean;
     public pcode!: string;
     public pcoordinate!: Coordinates;
-    public pmetadata!: pMetadataCar;
+    public pmetadata!: pMetadataBike;
     public pname!: string;
     public porigin!: string;
     public ptype!: string;

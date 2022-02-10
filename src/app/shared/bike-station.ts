@@ -1,13 +1,13 @@
-import { sMetadataCar } from './s-metadata-car';
-import { Coordinates } from './coordinates';
+import { Coordinates } from "./coordinates";
+import { sMetadataBike } from "./s-metadata-bike";
 
-export class ChargingStation {
+export class BikeStation {
 
   public sactive!: boolean;
   public savailable!: boolean;
   public scode!: string;
   public scoordinate!: Coordinates;
-  public smetadata!: sMetadataCar;
+  public smetadata!: sMetadataBike;
   public sname!: string;
   public sorigin!: string;
   public stype!: string;
