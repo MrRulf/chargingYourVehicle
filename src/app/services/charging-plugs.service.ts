@@ -1,3 +1,4 @@
+import { openDataHubAnswerJSON } from './../shared/openDataHub-answer-json';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -12,12 +13,12 @@ export class ChargingPlugsService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPlugsFull(): Observable<ChargingPlug> {
-    return this.http.get<ChargingPlug>(`${URL}?limit=-1&shownull=false&distinct=true`);
+  getAllPlugsFull(): Observable<openDataHubAnswerJSON> {
+    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&shownull=false&distinct=true`);
   }
 
-  getAllStationPlugsFull(scode: string): Observable<ChargingPlug> {
-    return this.http.get<ChargingPlug>(`${URL}?limit=-1&where=pcode.eq.%22${scode}%22&shownull=false&distinct=true`);
+  getAllStationPlugsFull(scode: string): Observable<openDataHubAnswerJSON> {
+    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&where=pcode.eq.%22${scode}%22&shownull=false&distinct=true`);
   }
 
 }
