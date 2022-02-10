@@ -16,8 +16,15 @@ export class ChargingPlugsService {
     return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&shownull=false&distinct=true`);
   }
 
+  getAllPlugsLite(): Observable<openDataHubAnswerJSON> {
+    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&select=smetadata%2C%20savailable&shownull=false&distinct=true`);
+  }
+
   getAllStationPlugsFull(scode: string): Observable<openDataHubAnswerJSON> {
     return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&where=pcode.eq.%22${scode}%22&shownull=false&distinct=true`);
   }
 
+  getAllStationPlugsLite(scode: string): Observable<openDataHubAnswerJSON> {
+    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&select=smetadata%2C%20savailable&where=pcode.eq.%22${scode}%22&shownull=false&distinct=true`);
+  }
 }
