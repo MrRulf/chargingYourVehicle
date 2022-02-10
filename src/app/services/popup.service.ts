@@ -14,12 +14,12 @@ export class PopupService {
       ret = ret + `
       <tr>
         <td>Säule: ${data[i].number}</td>
-        <td>Stärke: ${data[i].detail}</td>`;
-        if (data[i].occupied) {
-          ret = ret + `<td style="background-color: red; color: white">Besetzt</td>
+        <td>Stärke: ${data[i].detail} kW</td>`;
+        if (data[i].available) {
+          ret = ret + `<td style="background-color: green; color: white">Frei</td>
           </tr>`;
         } else {
-          ret = ret + `<td style="background-color: green; color: white">Frei</td>
+          ret = ret + `<td style="background-color: red; color: white">Besetzt</td>
           </tr>`;
         }
 

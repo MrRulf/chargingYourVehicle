@@ -2,7 +2,6 @@ import { openDataHubAnswerJSON } from './../shared/openDataHub-answer-json';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ChargingPlug } from '../shared/charging-plug';
 
 const URL: string = "https://mobility.api.opendatahub.bz.it/v2/flat%2Cnode/EChargingPlug";
 

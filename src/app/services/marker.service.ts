@@ -26,12 +26,13 @@ export class MarkerService {
         ]);
         this.cp.getAllStationPlugsFull(answer.data[i].scode).subscribe( plugs => {
           let pop: popUpData[] = [];
-          for (let i=0; i< plugs.data.length; i++){
+          for (let j = 0; j < plugs.data.length; j++){
             pop.push({
-              number: (i + 1).toString(),
-              detail: plugs.data[i].smetadata.outlets.maxPower,
-              occupied: plugs.data[i].savailable,
-            })
+              number: (j + 1).toString(),
+              detail: plugs.data[j].smetadata.outlets[0].maxPower,
+              available: plugs.data[j].savailable
+            });
+            console.log(plugs.data[j].savailable)
           }
           marker.bindPopup(this.ps.makeCapitalPopup(pop));
           marker.addTo(map);
