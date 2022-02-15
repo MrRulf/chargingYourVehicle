@@ -33,9 +33,16 @@ export class MarkerService {
         this.cp.getAllStationPlugsLite(stations.data[i].scode).subscribe(plugs => {
           let pop: popUpData[] = [];
           for (let j = 0; j < plugs.data.length; j++){
+            let power: string = plugs.data[j].smetadata.outlets[0].maxPower;
+            if (power == "-1") {
+              console.log(power);
+              power = "";              
+            } else {
+              power = power + " kW";
+            }
             pop.push({
               number: (j + 1).toString(),
-              detail: plugs.data[j].smetadata.outlets[0].maxPower + " kW",
+              detail: power,
               available: plugs.data[j].savailable,
               vehicleType: VehicleType.Car
             });
