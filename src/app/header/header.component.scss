@@ -1,26 +1,28 @@
+table {
+  width: 100%;
+  height: 120px;
+  background-color: rgb(34, 31, 31);
+}
+
 img {
   height: 100px;
   margin-left: 20px;
-}
-
-.header {
-  width: 100%;
-  height: 100px;
-  background-color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 p{
   color: white;
-  font-family: Georgia, serif;
-  font-size: 300%;
+  font-family: 'Montserrat';
+  font-size: 40px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-left: 20%;
 }
 
-.titel{
-  width: 80%;
-}
-
-.pic{
+.first{
   width: 20%;
+}
+
+.second{
+  width: 80%;
 }
