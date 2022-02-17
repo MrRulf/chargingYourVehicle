@@ -17,8 +17,8 @@ export class PopupService {
       <tr>
         <td>Plug: ${data[i].number}</td>
         <td>${data[i].detail}</td>`;
-      if (data[i].available !== null) {
-        if (data[i].available) {
+      if (data[i].active !== null) {
+        if (data[i].active) {
           ret = ret + `<td style="background-color: green; color: white; text-align: center;">`;
         } else {
           ret = ret + `<td style="background-color: red; color: white; text-align: center;">`
