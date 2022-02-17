@@ -32,10 +32,9 @@ export class MarkerService {
         ]);
         this.cp.getAllStationPlugsLite(stations.data[i].scode).subscribe(plugs => {
           let pop: popUpData[] = [];
-          for (let j = 0; j < plugs.data.length; j++){
+          for (let j = 0; j < plugs.data.length; j++) {
             let power: string = plugs.data[j].smetadata.outlets[0].maxPower;
             if (power == "-1") {
-              console.log(power);
               power = "";              
             } else {
               power = power + " kW";
@@ -43,7 +42,7 @@ export class MarkerService {
             pop.push({
               number: (j + 1).toString(),
               detail: power,
-              available: plugs.data[j].savailable,
+              active: plugs.data[j].sactive,
               vehicleType: VehicleType.Car
             });
           }
@@ -61,11 +60,11 @@ export class MarkerService {
         ]);
         this.bp.getAllStationPlugsLite(stations.data[i].scode).subscribe(plugs => {
           let pop: popUpData[] = [];
-          for (let j = 0; j < plugs.data.length; j++){
+          for (let j = 0; j < plugs.data.length; j++) {
             pop.push({
               number: (j + 1).toString(),
               detail: "",
-              available: plugs.data[j].savailable,
+              active: plugs.data[j].sactive,
               vehicleType: VehicleType.Bike
             });
           }

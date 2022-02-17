@@ -17,7 +17,7 @@ export class ChargingPlugsService {
   }
 
   getAllPlugsLite(): Observable<openDataHubAnswerJSON> {
-    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&select=smetadata%2C%20savailable&shownull=false&distinct=true`);
+    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&select=sactive%2Csavailable%2Cscode%2Cscoordinate%2Csmetadata&shownull=false&distinct=true`);
   }
 
   getAllStationPlugsFull(scode: string): Observable<openDataHubAnswerJSON> {
@@ -25,6 +25,6 @@ export class ChargingPlugsService {
   }
 
   getAllStationPlugsLite(scode: string): Observable<openDataHubAnswerJSON> {
-    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&select=smetadata%2C%20savailable&where=pcode.eq.%22${scode}%22&shownull=false&distinct=true`);
+    return this.http.get<openDataHubAnswerJSON>(`${URL}?limit=-1&select=sactive%2Csavailable%2Cscode%2Cscoordinate%2Csmetadata&where=pcode.eq.%22${scode}%22&shownull=false&distinct=true`);
   }
 }
