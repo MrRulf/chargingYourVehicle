@@ -40,12 +40,12 @@ export class MarkerService {
               vehicleType: VehicleType.Car
             });
           }
-          marker.bindPopup(this.ps.makeCapitalPopup(pop));
+          marker.bindPopup(this.ps.makeCapitalPopup(pop, stations.data[i].scoordinate));
           marker.addTo(map);
         });
       }
     });
-    
+
     this.bs.getAllStationsInCoordinatesLite(Areas.southtyrol).subscribe(stations => {
       for (let i = 0; i < stations.data.length; i++) {
         let marker = L.marker([
@@ -62,7 +62,7 @@ export class MarkerService {
               vehicleType: VehicleType.Bike
             });
           }
-          marker.bindPopup(this.ps.makeCapitalPopup(pop));
+          marker.bindPopup(this.ps.makeCapitalPopup(pop,  stations.data[i].scoordinate));
           marker.addTo(map);
         });
       }

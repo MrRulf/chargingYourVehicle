@@ -1,3 +1,4 @@
+import { Coordinates } from './../shared/coordinates';
 import { popUpData } from './../shared/popUpData';
 import { Injectable } from '@angular/core';
 import { VehicleType } from '../shared/vehicle-type';
@@ -9,7 +10,7 @@ export class PopupService {
   constructor() { }
 
   //Diese Methode gibt als String das Template des Popups zurueck
-  makeCapitalPopup(data: popUpData[]): string {
+  makeCapitalPopup(data: popUpData[], coordinates: Coordinates): string {
     let ret: string = `<table style="width: 300px">`;
     for (let i = 0; i < data.length; i++) {
       ret = ret + `
@@ -37,6 +38,7 @@ export class PopupService {
           break;
       }
     }
+    ret = ret + `<tr><td class="route-td" colspan="3"><a class="route" target="_blank" href="https://www.google.com/maps/place/` + coordinates.y + `,` + coordinates.x +`">Route planen</a></td></tr>`;
     return ret + `</table>`;
   }
 }

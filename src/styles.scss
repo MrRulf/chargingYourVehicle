@@ -2,3 +2,17 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.route{
+  color: white!important;
+  border: 1px solid rgb(143, 54, 170);
+  background-color: rgb(143, 54, 170);
+  padding: 5px 10px;
+  text-decoration: none;
+  float: right;
+
+}
+
+.route-td{
+  padding-top: 5px;
+}
