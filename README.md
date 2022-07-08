@@ -1,3 +1,15 @@
+# Give Up GitHub
+
+This project has given up GitHub.  ([See Software Freedom Conservancy's *Give Up  GitHub* site for details](https://GiveUpGitHub.org).)
+
+You can now find this project at [codeberg.org](https://codeberg.org/MrRulf/chargingYourVehicle) instead.
+
+Any use of this project's code by GitHub Copilot, past or present, is done without our permission.  We do not consent to GitHub's use of this project's code in Copilot.
+
+Join us; you can [give up GitHub](https://GiveUpGitHub.org) too!
+
+![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
+
 # DISCLAIMER
 
 This is a school project for practice purposes. For professional use, there are alternatives which are more advanced and therefore more suitable. As the information is provided by OpenDataHUB Südtirol we cannot take responsibility for incorrect information. Furthermore, we cannot guarantee the security of the software, as we do not develop it further. 
